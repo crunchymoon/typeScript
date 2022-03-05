@@ -100,3 +100,48 @@ let tsObi = {
 tsObi.name='maki'
 console.log(tsObi)
 */
+/*CLASSES
+access modifiers let us determine how a classes key value can be used
+public: change and read the value outside and inside the class (this is the default)
+private: read and change inside the class
+readonly: only read inside and outside of the class
+class Invoice {
+   public client: string;
+   public details: string;
+   public amount: number;
+
+    constructor(c: string,d: string,a: number) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+
+    }
+    format(){
+        return `${this.client} owes $${this.amount} for ${this.details}`
+    }
+}
+
+//shorthand for Class constructoring using access modifiers:
+class Invoice {
+    constructor(
+        public client: string,
+        public details: string,
+        public amount: number
+    ){}
+
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details}`
+    }
+}
+const invOne = new Invoice('mario', 'work on a mario website', 250);
+const invTwo = new Invoice('luigi', 'work on a luigi website', 300);
+
+
+let invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+
+invoices.forEach((inv) => {
+    console.log(inv.client, inv.details, inv.format());
+})
+*/
